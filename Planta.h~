@@ -1,0 +1,10 @@
+#pragma once
+
+class Padre{
+	double vida;
+	double daño;
+public:
+	Padre(double,double);
+	double ataque();
+	double defensa();
+};
