@@ -1,5 +1,6 @@
 #pragma once
-#include "Zombie.h"//no tenes que incluir a padre.h zombie.h ya lo hace
+#include "Padre.h"
+#include "Zombie.h"
 #include <string>
 
 using std::string;//te falto using

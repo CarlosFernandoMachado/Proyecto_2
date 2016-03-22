@@ -1,6 +1,6 @@
 #include "ZombiePortero.h"
 #include <iostream>
-#include <sstream>//sstream
+#include <sstring>
 
 using std::stringstream;
 
@@ -12,7 +12,7 @@ double ZombiePortero::ataque(){
 	return dano;
 }
 
-double ZombiePortero::defensa(double dano){//si vas a usar una puerta hace como hice con la papa porque hay que usar polimorfismo este metodo se mira  igual al de zombie normal
+double ZombiePortero::defensa(double dano){
 	if(vida >= dano){
 		vida -= dano;
 		return 0;
@@ -20,14 +20,14 @@ double ZombiePortero::defensa(double dano){//si vas a usar una puerta hace como 
 		return dano - vida;
 	}
 }
-int ZombiePortero::getPuerta(){// te falto ZombiePortero::
+int getPuerta(){
 	return puerta;
 }
-int ZombiePortero::getCosto(){// te falto ZombiePortero::
+int getCosto(){
 	return Costo;
 }
 	
-int ZombiePortero::getVelocidad_Avance(){// te falto ZombiePortero::
+int getVelocidad_Avance(){
 	return Velocidad_Avance;
 }
 

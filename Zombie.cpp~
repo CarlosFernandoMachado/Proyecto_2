@@ -1,11 +1,10 @@
 #include "Zombie.h"
 #include <iostream>
-#include <sstream>//es sstream no sstring
+#include <sstring>
 
 using std::stringstream;
 
-Zombie::Zombie(double vida, double dano,int costo, int Velocidad_Avance):Padre(vida,dano),costo(costo),Velocidad_Avance(Velocidad_Avance){
-	//cuando llamas al constructor del padre solo se hace asi -> : Padre(vida,dano)
+Zombie::Zombie(double vida, double dano,int costo, int Velocidad_Avance):Padre(vida(vida),dano(dano)),costo(costo),Velocidad_Avance(Velocidad_Avance){
 }
 
 double Zombie::ataque(){
@@ -21,11 +20,11 @@ double Zombie::defensa(double dano){
 	}
 }
 
-int Zombie::getCosto(){//te saltaste el Zombie::
+int getCosto(){
 	return Costo;
 }
 	
-int Zombie::getVelocidad_Avance(){//te saltaste el Zombie::
+int getVelocidad_Avance(){
 	return Velocidad_Avance;
 }
 
