@@ -6,15 +6,18 @@
 #include "Zombie.h"
 #include "ZOmbieDeportista.h"
 #include "ZombiePortero.h"
+#include <vector>
 #include <string>
 
 using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::vector;
+
 
 int main(int argc, char*argv[]){
-	cout << "HAI" << endl;
+	vector matriz{}
 
 	return 0;
 }
