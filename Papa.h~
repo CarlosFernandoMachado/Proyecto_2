@@ -1,5 +1,8 @@
 #include "Planta.h"
 #pragma once
+#include <string>
+
+using std::string;
 
 class Papa : public Planta{
 	double escudo;
@@ -10,4 +13,5 @@ public:
 	int getCosto();
 	virtual double ataque();
 	virtual double defensa(double);
+	virtual string Descripcion();
 };

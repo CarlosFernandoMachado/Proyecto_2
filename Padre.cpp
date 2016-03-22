@@ -1,7 +1,7 @@
 #include "Padre.h"
 #include<iostream>
 
-Padre::Padre(double vida, double dano)vida(vida),dano(dano){
+Padre::Padre(double vida, double dano):vida(vida),dano(dano){
 
 }
 Padre::~Padre(){

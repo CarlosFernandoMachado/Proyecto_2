@@ -16,15 +16,15 @@ int ZOmbieDeportista::getVelocidad_Avance(){
 	return Velocidad_Avance;
 }
 
-double ZOmbieDeportista::ataque(){
+virtual double ZOmbieDeportista::ataque(){
 	return ataque;
 }
 
-double ZOmbieDeportista::defensa(){
+virtual double ZOmbieDeportista::defensa(){
 
 }
 
-string ZOmbieDeportista::Descripcion(){
+virtual string ZOmbieDeportista::Descripcion(){
 	stringstream ss;
 	ss<<"ZombieDeportista: "<<"vida: "<<vida<<" dano: "<<dano<<" costo: "<<costo<<"Velocidad de Avance"<<Velocidad_Avance;
 	return ss.str();

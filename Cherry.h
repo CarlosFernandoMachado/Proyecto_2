@@ -9,7 +9,7 @@ class Cherry : public Planta{
 public:
 	Cherry(double=1,double=150,int=400,bool=true);
 	~Cherry();
-	int getCosto();
+	virtual int getCosto();
 	virtual double ataque();
 	virtual double defensa(double);
 	virtual string Descripcion();

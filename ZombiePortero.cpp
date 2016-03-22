@@ -12,12 +12,26 @@ double ZombiePortero::ataque(){
 	return dano;
 }
 
-double ZombiePortero::defensa(double dano){//si vas a usar una puerta hace como hice con la papa porque hay que usar polimorfismo este metodo se mira  igual al de zombie normal
-	if(vida >= dano){
-		vida -= dano;
-		return 0;
+double ZombiePortero::defensa(double dano){
+	if (puerta > 0){
+		if(dano < puerta){
+			puerta -= dano;
+			return 0;
+		}else if(dano > puerta){
+			dano -= puerta;
+			puerta = 0;
+			return dano;
+		}else if(dano == puerta){
+			puerta = 0;
+			return 0;
+		}
 	}else{
-		return dano - vida;
+		if(vida >= dano){
+			vida -= dano;
+			return 0;
+		}else{
+			return dano - vida;
+		}
 	}
 }
 int ZombiePortero::getPuerta(){// te falto ZombiePortero::

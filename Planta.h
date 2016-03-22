@@ -9,7 +9,7 @@ class Planta : public Padre{
 public:
 	Planta(double=50,double=50,int=100);
 	~Planta();
-	int getCosto();
+	virtual int getCosto();
 	virtual double ataque();
 	virtual double defensa(double);
 	virtual string Descripcion();

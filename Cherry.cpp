@@ -8,20 +8,20 @@ using std::string;
 Cherry::Cherry(double vida,double dano,int costo, bool Onehit):Planta(vida,dano,costo),Onehit(Onehit){}
 Cherry::~Cherry(){}
 int Cherry::getCosto(){
-	return costo;
+	return Padre::costo;
 }
 double Cherry::ataque(){
 	if(Onehit){
 		return 300;
 	}else{
-		return dano;
+		return Padre::dano;
 	}
 }
-double Cherry::defensa(double dano){
-	if(vida > dano){
-		vida -= dano;
+double Cherry::defensa(double dmg){
+	if(vida > dmg){
+		vida -= dmg;
 		return 0;
-	}else if(vida <= dano){
+	}else if(vida <= dmg){
 		return -1;
 	}
 	return 0;

@@ -10,7 +10,7 @@ class Papa : public Planta{
 public:
 	Papa(double=200,double=0,double=300,int=200,bool=true);
 	~Papa();
-	int getCosto();
+	virtual int getCosto();
 	virtual double ataque();
 	virtual double defensa(double);
 	virtual string Descripcion();

@@ -17,9 +17,7 @@ double Planta::defensa(double){
 	if(vida > dano){
 		vida -= dano;
 		return 0;
-	}else if (dano > vida){
-		return dano - vida;
-	}else if(vida == dano){
+	}else if(vida <= dano){
 		return -1;
 	}
 	return 0;
