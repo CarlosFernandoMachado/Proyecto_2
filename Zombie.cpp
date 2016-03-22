@@ -1,12 +1,14 @@
 #include "Zombie.h"
 #include<iostream>
 
-Padre::Padre(double vida, double dano)vida(vida),dano(dano){
+Padre::Padre( double vida, double dano,int costo, int Velocidad_Avance):Padre(vida(vida),dano(dano)),costo(costo),Velocidad_Avance(Velocidad_Avance){
 
 }
+
 double Padre::ataque(){
 	return dano;
 }
+
 double Padre::defensa(double dano){
 	if(vida >= dano){
 		vida -= dano;
@@ -14,4 +16,12 @@ double Padre::defensa(double dano){
 	}else{
 		return dano - vida;
 	}
+}
+
+int getCosto(){
+	return Costo;
+}
+	
+int getVelocidad_Avance(){
+	return getVelocidad_Avance;
 }
