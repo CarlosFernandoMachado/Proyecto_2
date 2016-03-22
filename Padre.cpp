@@ -10,13 +10,13 @@ Padre::~Padre(){
 double Padre::ataque(){
 	return dano;
 }
-double Padre::defensa(double dano){
-	if(vida > dano){
-		vida -= dano;
+double Padre::defensa(double dmg){
+	if(vida > dmg){
+		vida -= dmg;
 		return 0;
-	}else if (dano > vida){
-		return dano - vida;
-	}else if(vida == dano){
+	}else if (dmg > vida){
+		return dmg - vida;
+	}else if(vida == dmg){
 		return -1;
 	}
 }

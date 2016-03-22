@@ -11,16 +11,10 @@ int Planta::getCosto(){
 	return costo;
 }
 double Planta::ataque(){
-	return Padre::dano;
+	return Padre::ataque();
 }
 double Planta::defensa(double dmg){
-	if(vida > dmg){
-		vida -= dmg;
-		return 0;
-	}else if(vida <= dmg){
-		return -1;
-	}
-	return 0;
+	return Padre::defensa(dmg);
 }
 string Planta::Descripcion(){
 	string info = "Planta Normal\nHP: 50\nAtq: 50\ncosto: 100\nEfecto especial: No tiene";

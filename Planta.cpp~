@@ -11,13 +11,13 @@ int Planta::getCosto(){
 	return costo;
 }
 double Planta::ataque(){
-	return dano;
+	return Padre::dano;
 }
-double Planta::defensa(double){
-	if(vida > dano){
-		vida -= dano;
+double Planta::defensa(double dmg){
+	if(Padre::vida > dmg){
+		Padre::vida -= dmg;
 		return 0;
-	}else if(vida <= dano){
+	}else if(Padre::vida <= dmg){
 		return -1;
 	}
 	return 0;
