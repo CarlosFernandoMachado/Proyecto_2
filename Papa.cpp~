@@ -7,12 +7,15 @@ using std::string;
 
 Papa::Papa(double vida,double dano,double escudo,int costo,bool isEscudo):Planta(vida,dano,costo),escudo(escudo),isEscudo(isEscudo){}
 Papa::~Papa(){}
+
 int Planta::getCosto(){
 	return costo;
 }
+
 double Papa::ataque(){
 	return 0;
 }
+
 double Papa::defensa(double dmg){
 	if(isEscudo){
 		if(dmg < escudo){
@@ -33,6 +36,7 @@ double Papa::defensa(double dmg){
 	}
 	return 0;
 }
+
 string Papa::Descripcion(){
 	string info = "Papa\nHP: 200\nAtq: 0\nCosto: 200\nEfecto especial: Tiene un escudo de 300";
 	return info;

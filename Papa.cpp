@@ -8,8 +8,8 @@ using std::string;
 Papa::Papa(double vida,double dano,double escudo,int costo,bool isEscudo):Planta(vida,dano,costo),escudo(escudo),isEscudo(isEscudo){}
 Papa::~Papa(){}
 
-int Planta::getCosto(){
-	return costo;
+int Papa::getCosto(){
+	return Planta::getCosto();
 }
 
 double Papa::ataque(){

@@ -18,7 +18,7 @@ double Cherry::ataque(){
 	}
 }
 double Cherry::defensa(double dmg){
-	return padre::defensa(dmg);
+	return Padre::defensa(dmg);
 }
 string Cherry::Descripcion(){
 	string info = "Cherry\nHP: 1\nAtq: 150\nCosto: 400\nEfecto especial: Su primer ataque hace el doble de su ataque normal";

@@ -7,7 +7,7 @@ using std::string;
 class Planta : public Padre{
 	int costo;
 public:
-	Planta(double=50,double=50,int=100);
+	Planta(double=150,double=50,int=100);
 	~Planta();
 	virtual int getCosto();
 	virtual double ataque();

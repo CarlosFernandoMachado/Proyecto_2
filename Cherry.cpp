@@ -7,8 +7,8 @@ using std::string;
 
 Cherry::Cherry(double vida,double dano,int costo, bool Onehit):Planta(vida,dano,costo),Onehit(Onehit){}
 Cherry::~Cherry(){}
-int Planta::getCosto(){
-	return costo;
+int Cherry::getCosto(){
+	return Planta::getCosto();
 }
 double Cherry::ataque(){
 	if(Onehit){

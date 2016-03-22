@@ -10,7 +10,7 @@ class Zombie : public Padre{ //en la clase hija pones despues de class Zombie, :
 	//no hay necesidad de que pongas vida y dano porque ya lo heredan de padre
 	
 public:
-	Zombie(double  , double, int , int);
+	Zombie(double=150, double=50, int=100, int=1);
 	int getCosto();
 	int getVelocidad_Avance();
 	virtual double ataque();
