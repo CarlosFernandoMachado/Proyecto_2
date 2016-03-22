@@ -25,7 +25,7 @@ int getCosto(){
 }
 	
 int getVelocidad_Avance(){
-	return getVelocidad_Avance;
+	return Velocidad_Avance;
 }
 
 string Zombie::Descripcion(){
