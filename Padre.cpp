@@ -1,5 +1,5 @@
 #include "Padre.h"
-#include<iostream>
+#include <iostream>
 
 Padre::Padre(double vida, double dano):vida(vida),dano(dano){
 

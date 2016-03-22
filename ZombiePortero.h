@@ -5,14 +5,14 @@
 using std::string;//te falto using
 
 class ZombiePortero{
-	int puerta;//vida dano costo y avance ya se heredan de zombie
+	double puerta;//vida dano costo y avance ya se heredan de zombie
 	
 public:
-	ZombiePortero(double , double, int , int, int);
+	ZombiePortero(double , double, int , int, double);
 	int getCosto();
 	int getVelocidad_Avance();
 	int getPuerta();
 	virtual double ataque();
-	virtual double defensa();
-	virtual string Descripcion();
+	virtual double defensa(double);
+	//virtual string Descripcion();
 };

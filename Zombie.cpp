@@ -9,28 +9,23 @@ Zombie::Zombie(double vida, double dano,int costo, int Velocidad_Avance):Padre(v
 }
 
 double Zombie::ataque(){
-	return dano;
+	return Padre::ataque();
 }
 
-double Zombie::defensa(double dano){
-	if(vida >= dano){
-		vida -= dano;
-		return 0;
-	}else{
-		return dano - vida;
-	}
+double Zombie::defensa(double damage){
+	return Padre::defensa(damage);	
 }
 
-int Zombie::getCosto(){//te saltaste el Zombie::
-	return Costo;
+int Zombie::getCosto(){ 
+	return costo;
 }
 	
-int Zombie::getVelocidad_Avance(){//te saltaste el Zombie::
+int Zombie::getVelocidad_Avance(){ 
 	return Velocidad_Avance;
 }
 
-string Zombie::Descripcion(){
+/*string Zombie::Descripcion(){
 	stringstream ss;
-	ss<<"Zombie Normal: "<<"vida: "<<vida<<" dano: "<<dano<<" costo: "<<costo<<"Velocidad de Avance"<<Velocidad_Avance;
+	ss<<"Zombie Normal: "<<"vida: "<<Padre::vida<<" dano: "<<Padre::dano<<" costo: "<<costo<<"Velocidad de Avance"<<Velocidad_Avance;
 	return ss.str();
-}
+}*/

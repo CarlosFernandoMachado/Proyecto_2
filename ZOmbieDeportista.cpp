@@ -4,28 +4,38 @@
 using std::stringstream;
 
 //ZombiDeportista: Un zombi muy rápido y resistente.  solo aumentara su vida y velocidad de avance.{
-ZOmbieDeportista::ZOmbieDeportista(double  , double, int , int){
+ZOmbieDeportista::ZOmbieDeportista(double  , double, int , int,  double ){
 
 }
 
 int ZOmbieDeportista::getCosto(){
-	return costo;
+	return Zombie::costo;
 }
 
 int ZOmbieDeportista::getVelocidad_Avance(){
-	return Velocidad_Avance;
+	return Zombie::Velocidad_Avance+1;
 }
 
 double ZOmbieDeportista::ataque(){
-	return ataque;
+	return Padre::ataque();
 }
 
-double ZOmbieDeportista::defensa(){
-
+double ZOmbieDeportista::defensa(double damage){
+	if(damage>casco){
+			damage-=casco;
+			puerta=0;
+			return	Padre::defensa(damage);
+		}else if(damage<casco){
+			casco-=damage;
+			return Padre::defensa(damge);
+		}else if(damage==casco){
+			puerta=0;
+			return 0;
+		}
 }
 
-string ZOmbieDeportista::Descripcion(){
+/*string ZOmbieDeportista::Descripcion(){
 	stringstream ss;
-	ss<<"ZombieDeportista: "<<"vida: "<<vida<<" dano: "<<dano<<" costo: "<<costo<<"Velocidad de Avance"<<Velocidad_Avance;
+	ss<<"ZombieDeportista: "<<"vida: "<<Padre::vida<<" dano: "<<Padre::dano<<" costo: "<<Zombie::costo<<"Velocidad de Avance"<<Zombie::Velocidad_Avance<<" casco: "<<casco;
 	return ss.str();
-}
+}*/
