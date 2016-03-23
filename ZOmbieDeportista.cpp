@@ -4,7 +4,7 @@
 using std::stringstream;
 
 //ZombiDeportista: Un zombi muy rápido y resistente.  solo aumentara su vida y velocidad de avance.{
-ZOmbieDeportista::ZOmbieDeportista(double  , double, int , int,  double ):Zombie(vida,dano,costo,Velocidad_Avance),casco(casco){
+ZOmbieDeportista::ZOmbieDeportista(double vida, double dano, int costo, int Velocidad_Avance,  double casco):Zombie(vida,dano,costo,Velocidad_Avance),casco(casco){
 
 }
 

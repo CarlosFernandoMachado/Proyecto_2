@@ -1,19 +1,18 @@
 #pragma once
-#include "Padre.h"
-#include "Zombie.h"
+#include "Zombie.h"//no tenes que incluir a padre.h zombie.h ya lo hace
 #include <string>
 
 using std::string;//te falto using
 
 class ZombiePortero{
-	int puerta;//vida dano costo y avance ya se heredan de zombie
+	double puerta;//vida dano costo y avance ya se heredan de zombie
 	
 public:
-	ZombiePortero(double , double, int , int, int);
+	ZombiePortero(double=150, double=50, int=200, int=2, double=150);
 	int getCosto();
 	int getVelocidad_Avance();
 	int getPuerta();
 	virtual double ataque();
-	virtual double defensa();
-	virtual string Descripcion();
+	virtual double defensa(double);
+	//virtual string Descripcion();
 };

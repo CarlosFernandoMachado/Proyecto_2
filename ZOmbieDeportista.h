@@ -8,7 +8,7 @@ using std::string;
 class ZOmbieDeportista : public Padre{  	
 	double casco;
 public:
-	ZOmbieDeportista(double, double, int , int , double );
+	ZOmbieDeportista(double=350, double=100, int=400, int=2, double=150);
 	int getCosto();
 	int getVelocidad_Avance();
 	virtual double ataque();

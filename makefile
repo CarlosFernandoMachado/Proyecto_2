@@ -7,14 +7,14 @@ main.o:	main.cpp Padre.h Cherry.h Papa.h Planta.h Zombie.h ZombiePortero.h ZOmbi
 Padre.o:	Padre.cpp Padre.h
 	g++ -c Padre.cpp 
 
+Planta.o:	Planta.cpp Planta.h Padre.h
+	g++ -c Planta.cpp
+
 Cherry.o:	Cherry.cpp Cherry.h Planta.h
 	g++ -c Cherry.cpp
 
 Papa.o:	Papa.cpp Papa.h Planta.h
 	g++ -c Papa.cpp
-
-Planta.o:	Planta.cpp Planta.h Padre.h
-	g++ -c Planta.cpp
 
 Zombie.o:	Zombie.cpp Zombie.h Padre.h
 	g++ -c Zombie.cpp

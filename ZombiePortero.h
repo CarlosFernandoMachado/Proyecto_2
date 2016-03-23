@@ -8,7 +8,7 @@ class ZombiePortero{
 	double puerta;//vida dano costo y avance ya se heredan de zombie
 	
 public:
-	ZombiePortero(double , double, int , int, double);
+	ZombiePortero(double=300, double=100, int=200, int=2, double=100);
 	int getCosto();
 	int getVelocidad_Avance();
 	int getPuerta();

@@ -7,7 +7,7 @@ using std::string;
 class Cherry : public Planta{
 	bool Onehit;
 public:
-	Cherry(double=1,double=150,int=400,bool=true);
+	Cherry(double=300,double=150,int=400,bool=true);
 	~Cherry();
 	virtual int getCosto();
 	virtual double ataque();
