@@ -5,10 +5,11 @@
 using std::string; 
 
 //ZombiDeportista: Un zombi muy rápido y resistente.  solo aumentara su vida y velocidad de avance.
-class ZOmbieDeportista : public Padre{  	
+class Deportista : public Zombie{  	
 	double casco;
+	bool Moves;
 public:
-	ZOmbieDeportista(double=350, double=100, int , int , double );
+	Deportista(double=350, double=100, int=400, int=2, double=150,bool=true);
 	int getCosto();
 	int getVelocidad_Avance();
 	virtual double ataque();

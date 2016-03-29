@@ -5,22 +5,28 @@
 
 using std::string;
 
-Cherry::Cherry(double vida,double dano,int costo, bool Onehit):Planta(vida,dano,costo),Onehit(Onehit){}
+Cherry::Cherry(int x,int y,double vida,double dano,int costo, bool Onehit):Planta(x,y,vida,dano,costo),Onehit(Onehit){}
 Cherry::~Cherry(){}
 int Cherry::getCosto(){
-	return Planta::getCosto();
+	return costo;
 }
 double Cherry::ataque(){
 	if(Onehit){
-		return 300;
+		Onehit = false;
+		return dano*2;
 	}else{
-		return Padre::ataque();
+		Onehit = true;
+		return dano;
 	}
 }
 double Cherry::defensa(double dmg){
-	return Padre::defensa(dmg);
+	return Planta::defensa(dmg);
 }
 string Cherry::Descripcion(){
-	string info = "Cherry\nHP: 1\nAtq: 150\nCosto: 400\nEfecto especial: Su primer ataque hace el doble de su ataque normal";
+	string info = "Cherry\nHP: 300\nAtq: 150\nCosto: 400\nEfecto especial: Sus ataques van alternando entre el doble y el normal";
 	return info;
+}
+
+string Cherry::toString(){
+	return "Ch";
 }

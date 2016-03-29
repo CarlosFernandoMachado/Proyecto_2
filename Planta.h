@@ -5,12 +5,16 @@
 using std::string;
 
 class Planta : public Padre{
+protected:
 	int costo;
 public:
-	Planta(double=150,double=50,int=100);
+	Planta(int,int,double=150.0,double=50.0,int=100);
 	~Planta();
+	virtual int getX();
+	virtual int getY();
 	virtual int getCosto();
 	virtual double ataque();
 	virtual double defensa(double);
 	virtual string Descripcion();
+	virtual string toString();
 };

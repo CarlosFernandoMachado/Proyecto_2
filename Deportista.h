@@ -1,15 +1,13 @@
-#include "Padre.h"
+#include "Zombie.h"
 #pragma once
 #include <string>
 
-using std::string;
+using std::string; 
 
-class Zombie : public Padre{ 
-	int costo;
-	int Velocidad_Avance;
-	
+class Deportista : public Zombie{  	
+	double casco;
 public:
-	Zombie(int,int,double=150.0, double=50.0, int=100, int=1);
+	Deportista(int,int,double=350.0, double=100.0, int=400.0, int=2, double=150.0);
 	int getCosto();
 	virtual void setX(int);
 	virtual void setY(int);

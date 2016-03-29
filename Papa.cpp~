@@ -5,15 +5,21 @@
 
 using std::string;
 
-Papa::Papa(double vida,double dano,double escudo,int costo,bool isEscudo):Planta(vida,dano,costo),escudo(escudo),isEscudo(isEscudo){}
+Papa::Papa(int x,int y,double vida,double dano,double escudo,int costo,bool isEscudo):Planta(x,,y,vida,dano,costo),escudo(escudo),isEscudo(isEscudo){}
 Papa::~Papa(){}
 
-int Planta::getCosto(){
+int Papa::getCosto(){
 	return costo;
 }
 
+int Papa::getX(){
+	return x;
+}
+int Papa::getY(){
+	return y;
+}
 double Papa::ataque(){
-	return 0;
+	return dano;
 }
 
 double Papa::defensa(double dmg){
@@ -25,14 +31,14 @@ double Papa::defensa(double dmg){
 			isEscudo = false;
 			dmg -= escudo;
 			escudo = 0;
-			return Padre::defensa(dmg);
+			return Planta::defensa(dmg);
 		}else if(dmg == escudo){
 			isEscudo = false;
 			escudo = 0;
 			return 0;
 		}
 	}else{
-		return Padre::defensa(dmg);
+		return Planta::defensa(dmg);
 	}
 	return 0;
 }
@@ -40,4 +46,8 @@ double Papa::defensa(double dmg){
 string Papa::Descripcion(){
 	string info = "Papa\nHP: 200\nAtq: 0\nCosto: 200\nEfecto especial: Tiene un escudo de 300";
 	return info;
+}
+
+string Papa::toString(){
+	return "Pa";
 }

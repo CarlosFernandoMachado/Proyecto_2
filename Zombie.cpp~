@@ -1,35 +1,47 @@
 #include "Zombie.h"
 #include <iostream>
-#include <sstring>
+#include <string>
 
-using std::stringstream;
+using std::string;
 
-Zombie::Zombie(double vida, double dano,int costo, int Velocidad_Avance):Padre(vida(vida),dano(dano)),costo(costo),Velocidad_Avance(Velocidad_Avance){
+Zombie::Zombie(int x,int y,double vida, double dano,int costo, int Velocidad_Avance):Padre(x,y,vida,dano),costo(costo),Velocidad_Avance(Velocidad_Avance){
 }
 
+int Zombie::getX(){
+	return x;
+}
+int Zombie::getY(){
+	return y;
+}
 double Zombie::ataque(){
 	return dano;
 }
 
-double Zombie::defensa(double dano){
-	if(vida >= dano){
-		vida -= dano;
+double Zombie::defensa(double dmg){
+	if(vida > dmg){
+		vida -= dmg;
 		return 0;
-	}else{
-		return dano - vida;
+	}else if(vida < dmg){
+		dmg -= vida;
+		return dmg;
+	}else if(vida == dmg){
+		return -1;
 	}
 }
 
-int getCosto(){
-	return Costo;
+int Zombie::getCosto(){ 
+	return costo;
 }
 	
-int getVelocidad_Avance(){
+int Zombie::Avanzar(){ 
 	return Velocidad_Avance;
 }
 
 string Zombie::Descripcion(){
-	stringstream ss;
-	ss<<"Zombie Normal: "<<"vida: "<<vida<<" dano: "<<dano<<" costo: "<<costo<<"Velocidad de Avance"<<Velocidad_Avance;
-	return ss.str();
+	string info = "Zombie Normal\nHP: 150\nAtq: 50\ncosto: 100\nMovimiento: 1 espacio\nEfecto especial: No tiene";
+	return info;
+}
+
+string Zombie::toString(){
+	return "Zo";
 }

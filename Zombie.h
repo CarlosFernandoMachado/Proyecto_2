@@ -2,18 +2,23 @@
 #pragma once
 #include <string>
 
-using std::string;//te falto el using string
+using std::string;
 
-class Zombie : public Padre{ //en la clase hija pones despues de class Zombie, : public (nombre del padre)
+class Zombie : public Padre{ 
+protected:
 	int costo;
 	int Velocidad_Avance;
-	//no hay necesidad de que pongas vida y dano porque ya lo heredan de padre
 	
 public:
-	Zombie(double=150, double=50, int=100, int=1);
+	Zombie(int,int,double=150.0, double=50.0, int=100, int=1);
 	int getCosto();
-	int getVelocidad_Avance();
+	virtual void setX(int);
+	virtual void setY(int);
+	virtual int getX();
+	virtual int getY();
+	virtual int Avanzar();
 	virtual double ataque();
 	virtual double defensa(double);
-	//virtual string Descripcion();
+	virtual string Descripcion();
+	virtual string toString();
 };

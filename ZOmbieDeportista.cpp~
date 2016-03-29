@@ -1,10 +1,10 @@
 #include "ZombiePortero.h"
 #include <iostream>
-#include <sstream>
-using std::stringstream;
+#include <string>
+using std::string;
 
 //ZombiDeportista: Un zombi muy rápido y resistente.  solo aumentara su vida y velocidad de avance.{
-ZOmbieDeportista::ZOmbieDeportista(double  , double, int , int,  double ):Zombie(vida,dano,costo,Velocidad_Avance),casco(casco){
+ZOmbieDeportista::ZOmbieDeportista(double vida, double dano, int costo, int Velocidad_Avance,  double casco,bool Moves):Zombie(vida,dano,costo,Velocidad_Avance),casco(casco),Moves(Moves){
 
 }
 
@@ -13,7 +13,13 @@ int ZOmbieDeportista::getCosto(){
 }
 
 int ZOmbieDeportista::getVelocidad_Avance(){
-	return Zombie::Velocidad_Avance+1;
+	if(Moves){
+		Moves = false;
+		return 2;
+	}else{
+		Moves = true;
+		return 1;
+	}
 }
 
 double ZOmbieDeportista::ataque(){
@@ -34,8 +40,6 @@ double ZOmbieDeportista::defensa(double damage){
 		}
 }
 
-/*string ZOmbieDeportista::Descripcion(){
-	stringstream ss;
-	ss<<"ZombieDeportista: "<<"vida: "<<Padre::vida<<" dano: "<<Padre::dano<<" costo: "<<Zombie::costo<<"Velocidad de Avance"<<Zombie::Velocidad_Avance<<" casco: "<<casco;
-	return ss.str();
-}*/
+string ZOmbieDeportista::Descripcion(){
+	string info = "Zombie Deportista\nHP: 350\nAtq: 100\ncosto: 400\nMovimiento: 1 o 2 espaciso\nEfecto especial: Tiene un casco que bloquea 150 dano, va alternando entre movimientos";
+}

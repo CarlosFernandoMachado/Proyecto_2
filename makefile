@@ -1,7 +1,7 @@
-main: main.o Padre.o Cherry.o Papa.o Planta.o Zombie.o
-	g++ main.o Padre.o Cherry.o Papa.o Planta.o Zombie.o -o a 
+main: main.o Padre.o Cherry.o Papa.o Planta.o Zombie.o Deportista.o Portero.o
+	g++ main.o Padre.o Cherry.o Papa.o Planta.o Zombie.o Deportista.o Portero.o -o a 
 	
-main.o:	main.cpp Padre.h Cherry.h Papa.h Planta.h Zombie.h ZombiePortero.h ZOmbieDeportista.h
+main.o:	main.cpp Padre.h Cherry.h Papa.h Planta.h Zombie.h Portero.h Deportista.h
 	g++ -c main.cpp 
 
 Padre.o:	Padre.cpp Padre.h
@@ -19,8 +19,8 @@ Papa.o:	Papa.cpp Papa.h Planta.h
 Zombie.o:	Zombie.cpp Zombie.h Padre.h
 	g++ -c Zombie.cpp
 
-ZOmbieDeportista.o: ZOmbieDeportista.cpp ZOmbieDeportista.h Zombie.h
-	g++ -c ZOmbieDeportista.cpp 
+Deportista.o: Deportista.cpp Deportista.h Zombie.h
+	g++ -c Deportista.cpp 
 
-ZombiePortero.o: ZombiePortero.cpp ZombiePortero.h Zombie.h
-	g++ -c ZombiePortero.cpp
+Portero.o: Portero.cpp Portero.h Zombie.h
+	g++ -c Portero.cpp
