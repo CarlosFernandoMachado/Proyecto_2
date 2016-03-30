@@ -4,7 +4,7 @@
 #include <string>
 using std::string;
 
-Deportista::Deportista(int x ,int y,double vida, double dano, int costo, int Velocidad_Avance,  double casco):Zombie(vida,dano,costo,Velocidad_Avance),casco(casco){
+Deportista::Deportista(int x ,int y,double vida, double dano, int costo, int Velocidad_Avance,  double casco):Zombie(x,y,vida,dano,costo,Velocidad_Avance),casco(casco){
 }
 
 int Deportista::getCosto(){

@@ -52,9 +52,9 @@ int main(int argc, char*argv[]){
 		}
 	}
 	int turno = 1,opcion;
-	int light = 50, dark = 100,lightgain = 50,darkgain = 100;
+	int light = 10000, dark = 100000,lightgain = 50,darkgain = 100;
 	bool salir = true;
-	int x,y;
+	int x = 0,y = 0;
 	Instrucciones(deadzombies);
 	while(salir){
 		if(turno == 1){
@@ -150,7 +150,6 @@ int main(int argc, char*argv[]){
 			dark += darkgain;
 			while(true){
 				opcion = OpcionesZombies(darkgain,dark);
-				cout << "YA REGRESO" << endl;
 				if(opcion == 1){
 					opcion = MenuColocar(dark);
 					if(opcion == 1){

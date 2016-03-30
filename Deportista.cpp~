@@ -63,7 +63,7 @@ double Deportista::defensa(double damage){
 }
 
 string Deportista::Descripcion(){
-	string info = "Zombie Deportista\nHP: 350\nAtq: 100\ncosto: 400\nMovimiento: 0\nEfecto especial: Tiene un casco que bloquea 150 daño, su movimiento va aumentando por turno";
+	string info = "Zombie Deportista\nHP: 350\nAtq: 100\ncosto: 400\nMovimiento: 0\nEfecto especial: Tiene un casco que bloquea 150 daño, su movimiento va aumentando por turno\npuede saltar plantas";
 	return info;
 }
 
