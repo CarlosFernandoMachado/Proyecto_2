@@ -42,17 +42,19 @@ int main(int argc, char*argv[]){
 	vector <Deportista> deportistas;
 	vector <Portero> porteros;	
 	int deadzombies;
-	while(true){
+	bool valida = true,seguirturno = true;
+	while(valida){
 		cout << "Cuantos zombies desea eliminar para ganar: ";
 		cin >> deadzombies;
 		if (deadzombies > 0){
-			break;
+			valida = false;
 		}else{
 			cout << "Ingrese un numero positivo y mayor a cero" << endl;
 		}
 	}
+	valida = true;
 	int turno = 1,opcion;
-	int light = 10000, dark = 100000,lightgain = 50,darkgain = 100;
+	int light = 50, dark = 100,lightgain = 50,darkgain = 100;
 	bool salir = true;
 	int x = 0,y = 0;
 	Instrucciones(deadzombies);
@@ -60,7 +62,7 @@ int main(int argc, char*argv[]){
 		if(turno == 1){
 			cout << "EMPIEZA TURNO DE LAS PLANTAS" << endl;
 			light += lightgain;
-			while(true){
+			while(seguirturno){
 				opcion = OpcionesPlantas(lightgain,light);
 				if(opcion == 1){
 					opcion = MenuPlantar(light);
@@ -136,9 +138,10 @@ int main(int argc, char*argv[]){
 						}
 					}
 				}else{
-					break;
+					seguirturno = false;
 				}
 			}
+			seguirturno = true;
 			turno = 2;
 			deadzombies = CombatePlantas(plantas,cherrys,papas,zombies,deportistas,porteros,deadzombies);
 			if(deadzombies <= 0){
@@ -148,7 +151,7 @@ int main(int argc, char*argv[]){
 		}else if (turno == 2){
 			cout << "EMPIEZA TURNO DE ZOMBIES" << endl;
 			dark += darkgain;
-			while(true){
+			while(seguirturno){
 				opcion = OpcionesZombies(darkgain,dark);
 				if(opcion == 1){
 					opcion = MenuColocar(dark);
@@ -224,9 +227,10 @@ int main(int argc, char*argv[]){
 						}
 					}
 				}else{
-					break;
+					seguirturno = false;
 				}
 			}
+			seguirturno = true;
 			turno = 1;
 			MoverZombies(plantas,cherrys,papas,zombies,deportistas,porteros);
 			salir = GaneZombies(zombies,deportistas,porteros);
@@ -724,14 +728,15 @@ int MenuPlantar(int light){
 	Planta planta(0,0);
 	Cherry cherry(0,0);
 	Papa papa(0,0);
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Tiene " << light << " luz disponible\n" <<"Puede plantar las siguientes plantas\n1)Planta normal\n2)Papa\n3)Cherry" << endl;
 		cout << planta.Descripcion() << endl;
 		cout << cherry.Descripcion() << endl;
 		cout << papa.Descripcion() << endl;
 		cin >> opcion;
 		if(opcion == 1 || opcion == 2 || opcion == 3){
-			break;
+			valida = false;
 		}
 	}
 	return opcion;
@@ -741,14 +746,15 @@ int MenuColocar(int dark){
 	Zombie zombie(0,0);
 	Deportista deportista(0,0);
 	Portero portero(0,0);
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Tiene " << dark << " oscuridad disponible" <<"\nPuede colocar los siguientes zombies\n1)Zombie normal\n2)Portero\n3)Deportista" << endl;
 		cout << zombie.Descripcion() << endl;
 		cout << deportista.Descripcion() << endl;
 		cout << portero.Descripcion() << endl;
 		cin >> opcion;
 		if(opcion == 1 || opcion == 2 || opcion == 3){
-			break;
+			valida = false;
 		}
 	}
 	return opcion;
@@ -758,11 +764,12 @@ void Instrucciones(int zombies){
 }
 int OpcionesPlantas(int lightgain,int light){
 	int opcion;
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Su ganancia de luz por turno es: " << lightgain << "\nTiene " << light << " luz disponible" << "\n¿Que desea hacer?\n1)Plantar plantas\n2)Invertir luz\n3)Pasar turno" << endl;
 		cin >> opcion;
 		if (opcion == 1 || opcion == 2 || opcion == 3){
-			break;
+			valida = false;
 		}else{
 			cout << "Porfavor escoja una opcion valida" << endl;
 		}
@@ -771,11 +778,12 @@ int OpcionesPlantas(int lightgain,int light){
 }
 int OpcionesZombies(int darkgain,int dark){
 	int opcion;
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Su ganancia de oscuridad por turno es: " << darkgain << "\nTiene " << dark << " oscuridad disponible" << "\n¿Que desea hacer?\n1)Colocar zombies\n2)Invertir oscuridad\n3)Pasar turno" << endl;
 		cin >> opcion;
 		if (opcion == 1 || opcion == 2 || opcion == 3){
-			break;
+			valida = false;
 		}else{
 			cout << "Porfavor escoja una opcion valida" << endl;
 		}
@@ -784,11 +792,12 @@ int OpcionesZombies(int darkgain,int dark){
 }
 int MenuInvertirLight(int lightgain, int light){
 	int opcion;
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Tiene " << light << " de luz disponible" <<"\nPara poder invertir en su ganancia de luz por turno tiene que pagar: " << lightgain << "\nGanara cuanto pague" <<"\nDesea hacerlo? \n1)si\n2)no" << endl;
 		cin >> opcion;
 		if(opcion == 1 || opcion == 2){
-			break;
+			valida = false;
 		}else{
 			cout << "Ingrese una opcion valida" << endl;
 		}
@@ -797,11 +806,12 @@ int MenuInvertirLight(int lightgain, int light){
 }
 int MenuInvertirDark(int darkgain,int dark){
 	int opcion;
-	while(true){
+	bool valida = true;
+	while(valida){
 		cout << "Tiene " << dark << " de oscuridad disponible" <<"\nPara poder invertir en su ganancia de oscuridad por turno tiene que pagar: " << darkgain << "\nGanara cuanto pague" <<"\nDesea hacerlo? \n1)si\n2)no" << endl;
 		cin >> opcion;
 		if(opcion == 1 || opcion == 2){
-			break;
+			valida = false;
 		}else{
 			cout << "Ingrese una opcion valida" << endl;
 		}
