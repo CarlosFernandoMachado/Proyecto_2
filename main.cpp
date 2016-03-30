@@ -139,7 +139,7 @@ int main(int argc, char*argv[]){
 					break;
 				}
 			}
-			turno += 1;
+			turno = 2;
 			deadzombies = CombatePlantas(plantas,cherrys,papas,zombies,deportistas,porteros,deadzombies);
 			if(deadzombies <= 0){
 				cout << "HAN GANADO LAS PLANTAS" << endl;
@@ -150,6 +150,7 @@ int main(int argc, char*argv[]){
 			dark += darkgain;
 			while(true){
 				opcion = OpcionesZombies(darkgain,dark);
+				cout << "YA REGRESO" << endl;
 				if(opcion == 1){
 					opcion = MenuColocar(dark);
 					if(opcion == 1){
@@ -227,7 +228,7 @@ int main(int argc, char*argv[]){
 					break;
 				}
 			}
-			turno -= 1;
+			turno = 1;
 			MoverZombies(plantas,cherrys,papas,zombies,deportistas,porteros);
 			salir = GaneZombies(zombies,deportistas,porteros);
 			if(!salir){
@@ -466,11 +467,11 @@ void MoverZombies(vector<Planta>& plantas, vector<Cherry>& cherrys, vector<Papa>
 	autorizacion = true;
 	if(deportistas.size() > 0){
 		for(int i = 0;i < deportistas.size(); i++){
-			x = zombies[i].getX() - zombies[i].Avanzar();
+			x = deportistas[i].getX() - deportistas[i].Avanzar();
 			if(x < 0){
 				x = 0;
 			}
-			y = zombies[i].getY();
+			y = deportistas[i].getY();
 			if(plantas.size() > 0){
 				for(int j = 0;j < plantas.size(); j++){
 					if(plantas[j].getX() == x && plantas[j].getY() == y){
@@ -511,11 +512,11 @@ void MoverZombies(vector<Planta>& plantas, vector<Cherry>& cherrys, vector<Papa>
 	autorizacion = true;
 	if(porteros.size() > 0){
 		for(int i = 0;i < porteros.size(); i++){
-			x = zombies[i].getX() - zombies[i].Avanzar();
+			x = porteros[i].getX() - porteros[i].Avanzar();
 			if(x < 0){
 				x = 0;
 			}
-			y = zombies[i].getY();
+			y = porteros[i].getY();
 			if(plantas.size() > 0){
 				for(int j = 0;j < plantas.size(); j++){
 					if(plantas[j].getX() == x && plantas[j].getY() == y){

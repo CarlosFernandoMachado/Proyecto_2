@@ -139,7 +139,7 @@ int main(int argc, char*argv[]){
 					break;
 				}
 			}
-			turno += 1;
+			turno = 2;
 			deadzombies = CombatePlantas(plantas,cherrys,papas,zombies,deportistas,porteros,deadzombies);
 			if(deadzombies <= 0){
 				cout << "HAN GANADO LAS PLANTAS" << endl;
@@ -150,6 +150,7 @@ int main(int argc, char*argv[]){
 			dark += darkgain;
 			while(true){
 				opcion = OpcionesZombies(darkgain,dark);
+				cout << "YA REGRESO" << endl;
 				if(opcion == 1){
 					opcion = MenuColocar(dark);
 					if(opcion == 1){
@@ -227,7 +228,7 @@ int main(int argc, char*argv[]){
 					break;
 				}
 			}
-			turno -= 1;
+			turno = 1;
 			MoverZombies(plantas,cherrys,papas,zombies,deportistas,porteros);
 			salir = GaneZombies(zombies,deportistas,porteros);
 			if(!salir){
